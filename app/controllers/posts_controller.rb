@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @post.user_id = 1
     
     if @post.save
-      redirect_to posts_path, notice: 'The post has been created'
+      redirect_to posts_path, flash: { success: 'The post has been created' }
     else
       render :new
     end

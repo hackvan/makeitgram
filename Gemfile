@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Handle uploads files
 gem "paperclip", "~> 5.1.0"
+
+# Import Bootstrap and jquery
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
