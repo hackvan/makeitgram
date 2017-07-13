@@ -11,6 +11,7 @@
 </pp>
 <% @posts.each do |post| %>
 <div>
+  <%= post.user.username %><br>
   <%= time_ago_in_words post.created_at %>
   <p>
     <%= image_tag post.photo.url(:medium) %><br>
