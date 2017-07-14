@@ -1,16 +1,3 @@
 <% @posts.each do |post| %>
-<div class="post">
-  <div class="post__header">
-    <strong><%= post.user.username %></strong>
-  </div>
-  <div class="post__body">
-    <%= image_tag post.photo.url(:medium) %>
-    <div class="post__description">
-      <strong><%= post.user.username %></strong> <%= post.description %>
-    </div>
-  </div>
-  <div class="post__footer">
-    <%= time_ago_in_words post.created_at %>
-  </div>
-</div>
+<%= render 'post', post: post, detail: true %>
 <% end %>
