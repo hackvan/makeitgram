@@ -1,3 +1,5 @@
+<% profilable = true if local_assigns[:profilable].nil? %>
+<% linkable   = true if local_assigns[:linkable].nil? %>
 <div class="post">
   <% if profilable %>
   <div class="post__header">
