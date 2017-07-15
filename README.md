@@ -1,24 +1,42 @@
-# README
+# Photogram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is an example app to teach Ruby on Rails
 
-Things you may want to cover:
+Ruby version: `2.4.1`
+Rails version: `5.1.2`
 
-* Ruby version
+## Installation
 
-* System dependencies
+Clone the project
 
-* Configuration
+`git clone https://github.com/gmoralesc/photogram`
+`cd photogram`
 
-* Database creation
+> If you are using rvm please you can create a gemset for the project:
+> `rvm use 2.4.1@photogra`
 
-* Database initialization
+Install dependencies
 
-* How to run the test suite
+`bundle install`
 
-* Services (job queues, cache servers, search engines, etc.)
+> You need bundler in order to run this command, you can install with:
+> `gem install bundler`
 
-* Deployment instructions
+## Database
 
-* ...
+In order to crate the database
+
+`rails db:migrate`
+
+> This project use postgresql, you need to install a run it
+
+
+## Run
+
+To run the application
+
+`rails server`
+
+Open your web browser and go to
+
+`http://localhost:3000`
