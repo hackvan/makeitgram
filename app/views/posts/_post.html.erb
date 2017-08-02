@@ -9,7 +9,7 @@
   </div>
   <% end %>
   <div class="post__body">
-    <% if linkable %> 
+    <% if linkable %>
       <%= link_to post do %>
         <%= image_tag post.photo.url(:medium) %>
       <% end %>
@@ -23,6 +23,17 @@
         <% end %>
       <% end %>
       <%= post.description %>
+      <div class="post__comments">
+        <% post.comments.each do |comment| %>
+          <div class="post__comment">
+            <strong><%= comment.user.username %></strong>
+            <%= comment.text %>
+          </div>
+        <% end %>
+      </div>
+      <%= form_with model: @comment do |f| %>
+        <%= f.text_field :text %>
+      <% end %>
     </div>
   </div>
   <div class="post__footer">
