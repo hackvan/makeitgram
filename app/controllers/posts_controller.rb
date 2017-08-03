@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order(created_at: :desc).limit(10)
+    @comment = Comment.new
   end
 
   def new
@@ -11,9 +12,6 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
-    # @post = Post.new(post_params)
-    # @post.user_id = current_user.id
-    
     if @post.save
       redirect_to posts_path, flash: { success: 'The post has been created' }
     else
@@ -24,7 +22,8 @@ class PostsController < ApplicationController
   def show
     begin
       @post = Post.find(params[:id])
-    rescue => e 
+      @comment = Comment.new
+    rescue => e
       redirect_to posts_path, flash: { alert: "The post has not been found" }
     end
   end
